@@ -31,6 +31,7 @@ module.exports =(options={})=>( {
   		},
   		{
   			test:/\.(png|jpg|jepg|gif|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+        exclude:/favicon\.png$/,
   			use:[
 	  			{
 	  				loader:'url-loader',
@@ -48,7 +49,8 @@ module.exports =(options={})=>( {
   plugins: [
       new HtmlWebpackPlugin({
         title: 'Hot Module Replacement',
-        template:'index.html'
+        template:'index.html',
+        favicon:'./src/img/favicon.ico'
       }),
       new ExtractTextPlugin({
       	filename:'css/[name]-[hash].css',
