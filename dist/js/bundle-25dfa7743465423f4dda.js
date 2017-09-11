@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "file:///E:/code/webpack/dist/";
+/******/ 	__webpack_require__.p = "https://mirror198829.github.io/webpack/dist/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -71,6 +71,7 @@
 
 
 __webpack_require__(1);
+
 __webpack_require__(3);
 __webpack_require__(4);
 
@@ -87,7 +88,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)('div').click(function () {
+(0, _jquery2.default)('button').click(function () {
 	var userName = "webpack";
 	alert(userName);
 });

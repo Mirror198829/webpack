@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-//const PublicPath = 'https://mirror198829.github.io/webpack/dist/';
-const PublicPath = 'file:///E:/code/webpack/dist/';
+const PublicPath = 'https://mirror198829.github.io/webpack/dist/';
+//const PublicPath = 'file:///E:/code/webpack/dist/';
 module.exports =(options={})=>( {
   entry: './src/js/index.js',
   output: {
