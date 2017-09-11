@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PublicPath = 'https://mirror198829.github.io/webpack/dist/';
+//const PublicPath = 'https://mirror198829.github.io/webpack/dist/';
+const PublicPath = 'file:///E:/code/webpack/dist/';
 module.exports =(options={})=>( {
   entry: './src/js/index.js',
   output: {
@@ -36,21 +37,29 @@ module.exports =(options={})=>( {
 	  			{
 	  				loader:'url-loader',
 	  				options:{
-		  				limit:100000,
-		  				name:'img/[name]-[hash]',
+		  				limit:1000,
+		  				name:'img/[name]-[hash].[ext]',
 		  				publicPath:options.dev?'/':PublicPath
 		  			}
 	  		    }
-  			]
-  			
-  		}
+  			]  			
+  		},
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src','link:href']
+          }
+        }
+      }
   	]
   },
   plugins: [
       new HtmlWebpackPlugin({
         title: 'Hot Module Replacement',
         template:'index.html',
-        favicon:'./src/img/favicon.ico'
+        favicon:'./src/img/favicon.ico' //favicon.ico的显示
       }),
       new ExtractTextPlugin({
       	filename:'css/[name]-[hash].css',

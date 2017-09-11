@@ -1,5 +1,5 @@
 import $ from 'jquery'
-$('div').click(function(){
+$('button').click(function(){
 	const userName="webpack";
 	alert(userName)
 })
