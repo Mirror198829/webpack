@@ -6,7 +6,8 @@
 在一个模块被引入之前，会预先使用`loader`处理模块的内容
 ### webpack-dev-server
 1. `devServer`是webpack的开发服务器，可以使得代码跑在服务器上  
-2. 提供了热更新的功能
+2. 提供了热更新的功能  
+……其他诸多配置，详细使用的时候可自行研究
 ``` javascript
 npm i -D webpack-dev-server 
 // package.json
