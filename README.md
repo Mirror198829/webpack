@@ -8,7 +8,6 @@
 `devServer`是webpack的开发服务器，可以使得代码跑在服务器上
 ``` javascript
 npm i -D webpack-dev-server 
-
 // package.json
 "scripts": {
  "dev": "webpack-dev-server --progress --colors --env.dev",
