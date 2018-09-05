@@ -34,4 +34,5 @@ npm i -D webpack-dev-server
     }
  ]  			
 }
+`url-loader`会把图片变成base64的编码形式
 ```
