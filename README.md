@@ -17,19 +17,21 @@ npm i -D webpack-dev-server
 }
 ```
 ### 引入图片
+处理的loader有file-loader  
+通常使用增强版loader：url-loader
 ``` javascript
 {
-	test:/\.(png|jpg|jepg|gif|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+ test:/\.(png|jpg|jepg|gif|eot|svg|ttf|woff|woff2)(\?.+)?$/,
  exclude:/favicon\.png$/,
  use:[
-	  			{
-	  				loader:'url-loader',
-	  				options:{
-		  				limit:1000,
-		  				name:'img/[name]-[hash].[ext]',
-		  				publicPath:options.dev?'/':PublicPath
-		  			}
-	  		    }
+    {
+	loader:'url-loader',
+	options:{
+		limit:1000,
+		name:'img/[name]-[hash].[ext]',
+		publicPath:options.dev?'/':PublicPath
+	}
+    }
  ]  			
 }
 ```
