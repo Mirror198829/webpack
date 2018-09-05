@@ -16,3 +16,20 @@ npm i -D webpack-dev-server
  "build": "rimraf dist && webpack --progress --colors --display-reasons"
 }
 ```
+### 引入图片
+``` javascript
+{
+	test:/\.(png|jpg|jepg|gif|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+ exclude:/favicon\.png$/,
+ use:[
+	  			{
+	  				loader:'url-loader',
+	  				options:{
+		  				limit:1000,
+		  				name:'img/[name]-[hash].[ext]',
+		  				publicPath:options.dev?'/':PublicPath
+		  			}
+	  		    }
+ ]  			
+}
+```
