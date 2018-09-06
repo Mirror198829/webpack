@@ -1,5 +1,6 @@
 # webpack
-模块打包机，支持`commonJS`和`es6`语法
+模块打包机，支持`commonJS`和`es6`语法  
+`npm run dev`打包的资源不是放在目录里，而是放在内存内
 ### 插件
 ### loader
 `loader`是webpack用来预处理模块的  
@@ -35,4 +36,15 @@ npm i -D webpack-dev-server
  ]  			
 }
 `url-loader`会把图片变成base64的编码形式
+```
+### publicPath
+* `publicPath`是在所有路径转换之后在前面再加上`publicPath`路径，最终路径 = `publicPath` + 转换后路径
+* 无论publicPath的路径是啥样，必须以`/`结尾
+* `publicPath`是所有资源的基础路径
+``` javascript
+output: {
+    filename: 'js/bundle-[hash].js',
+    path: path.resolve(__dirname, 'dist'),//path.resolve(__dirname,)得到的是根目录
+    publicPath:options.dev?'/':PublicPath 
+  }
 ```
