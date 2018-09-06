@@ -36,3 +36,14 @@ npm i -D webpack-dev-server
 }
 `url-loader`会把图片变成base64的编码形式
 ```
+### publicPath
+* `publicPath`是在所有路径转换之后在前面再加上`publicPath`路径,最终路径 = `publicPath` + 转换后路径
+* 无论publicPath的路径是啥样，必须以`/`结尾
+* `publicPath`是所有资源的基础路径
+``` javascript
+output: {
+    filename: 'js/bundle-[hash].js',
+    path: path.resolve(__dirname, 'dist'),//path.resolve(__dirname,)得到的是根目录
+    publicPath:options.dev?'/':PublicPath 
+  }
+```
