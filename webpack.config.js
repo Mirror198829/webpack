@@ -1,14 +1,14 @@
-const path = require('path');
+const path = require('path'); //nodejs的内置模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PublicPath = 'https://mirror198829.github.io/webpack/dist/';
 //const PublicPath = 'file:///E:/code/webpack/dist/';
 module.exports =(options={})=>( {
-  entry: './src/js/index.js',
+  entry: './src/js/index.js',  //入口文件
   output: {
     filename: 'js/bundle-[hash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath:options.dev?'/':PublicPath
+    path: path.resolve(__dirname, 'dist'),//path.resolve(__dirname,)得到的是根目录
+    publicPath:options.dev?'/':PublicPath //pulicPath就是在所有路径转换之后在前面再加上路径
   },
   module:{
   	rules:[

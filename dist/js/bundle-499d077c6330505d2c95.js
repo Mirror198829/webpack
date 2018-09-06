@@ -92,6 +92,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	var userName = "webpack";
 	alert(userName);
 });
+(0, _jquery2.default)('.common-topbar-nav-lst').mouseenter(function () {
+	(0, _jquery2.default)('.line').addClass('show');
+});
+(0, _jquery2.default)('.common-topbar-nav-item').each(function () {
+	var that = (0, _jquery2.default)(this);
+	that.mouseenter(function () {
+		var index = (0, _jquery2.default)('.common-topbar-nav-item').index(that);
+		var left = that.position().left;
+		var width = that.outerWidth();
+		(0, _jquery2.default)(".line").css({
+			'left': left,
+			'width': width
+		});
+	});
+});
+(0, _jquery2.default)('.common-topbar-nav-lst').mouseleave(function () {
+	(0, _jquery2.default)(".line").css({
+		'width': 0,
+		"left": 0
+	}).removeClass('show');
+});
 
 /***/ }),
 /* 2 */

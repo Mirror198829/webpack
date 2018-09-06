@@ -3,9 +3,12 @@ $('button').click(function(){
 	const userName="webpack";
 	alert(userName)
 })
+$('.common-topbar-nav-lst').mouseenter(function(){
+	$('.line').addClass('show');	
+});
 $('.common-topbar-nav-item').each(function(){
 	let that = $(this);
-	that.mouseover(function(){
+	that.mouseenter(function(){
 		let index =  $('.common-topbar-nav-item').index(that);
 		let left = that.position().left;
 		let width =  that.outerWidth();
@@ -15,8 +18,9 @@ $('.common-topbar-nav-item').each(function(){
 		})
 	})
 });
-$('.common-topbar-nav-lst').mouseout(function(){
+$('.common-topbar-nav-lst').mouseleave(function(){
 	$(".line").css({
-		'width':0
-	})
+		'width':0,
+		"left":0
+	}).removeClass('show');
 })
