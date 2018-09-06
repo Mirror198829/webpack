@@ -1,5 +1,6 @@
 # webpack
-模块打包机，支持`commonJS`和`es6`语法
+模块打包机，支持`commonJS`和`es6`语法  
+`npm run dev`打包的资源不是放在目录里，而是放在内存内
 ### 插件
 ### loader
 `loader`是webpack用来预处理模块的  
