@@ -8,7 +8,10 @@ module.exports =(options={})=>( {
   output: {
     filename: 'js/bundle-[hash].js',
     path: path.resolve(__dirname, 'dist'),//path.resolve(__dirname,)得到的是根目录
-    publicPath:options.dev?'/':PublicPath //pulicPath就是在所有路径转换之后在前面再加上路径
+    //publicPath就是在所有路径转换之后在前面再加上路径
+    //无论publicPath的路径是啥样，必须以‘/’结尾
+    //所有资源的基础路径
+    publicPath:options.dev?'/':PublicPath 
   },
   module:{
   	rules:[
